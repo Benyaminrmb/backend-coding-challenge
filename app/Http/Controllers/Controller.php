@@ -49,11 +49,11 @@ class Controller extends BaseController
     /**
      * Response generator
      * @param $data
-     * @param $status
+     * @param bool $status
      * @param $message
      * @return mixed
      */
-    public function response($data, $status = true, $message = null)
+    public function response($data, bool $status = true, $message = null)
     {
         $response_type = $this->responseType();
 
