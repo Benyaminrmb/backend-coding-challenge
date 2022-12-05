@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCurrencyRequest;
 use App\Models\Currency;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Request;
