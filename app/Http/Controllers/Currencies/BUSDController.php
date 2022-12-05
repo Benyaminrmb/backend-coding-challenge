@@ -8,10 +8,6 @@ use App\Http\Controllers\currencyInterface;
 use App\Models\Currency;
 use Illuminate\Http\Request;
 
-class BtcController extends currencyAbstract
+class BUSDController extends currencyAbstract
 {
-    public function toRial(Currency $currency): int
-    {
-        return ($currency->amount * 10) + 2;
-    }
 }
