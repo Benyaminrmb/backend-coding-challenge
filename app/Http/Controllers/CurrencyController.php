@@ -18,6 +18,7 @@ class CurrencyController extends Controller
     public function store($data)
     {
         $validator = Validator::make($data, [
+
             '*.name' => 'required|string|unique:currencies,name|max:50',
             '*.amount' => 'required|numeric',
         ], [
@@ -43,6 +44,7 @@ class CurrencyController extends Controller
             $response = $this->response($errors, false);
             throw new HttpResponseException($response);
         }
+
         return Currency::upsert($validator->validated(), ['name', 'amount']);
     }
 
