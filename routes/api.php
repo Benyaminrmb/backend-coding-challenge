@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('/initialize',[\App\Http\Controllers\Controller::class,'initialize']);
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('response-type')->group(function () {
+    Route::get('/initialize', [\App\Http\Controllers\Controller::class, 'initialize']);
+    Route::get('/currencies', [\App\Http\Controllers\Controller::class, 'getCurrencies']);
 });
