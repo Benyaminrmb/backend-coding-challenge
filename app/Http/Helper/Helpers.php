@@ -9,7 +9,7 @@ if (!function_exists('helper_to_array')) {
     function helper_to_array($data): array|int
     {
         if (is_object($data)) {
-            $data = json_decode(Str::replace('.','',$data->toJson()), true);
+            $data = json_decode($data->toJson(), true);
         }
         return $data;
     }
