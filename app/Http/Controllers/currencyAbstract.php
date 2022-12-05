@@ -6,11 +6,15 @@ use App\Models\Currency;
 
 class currencyAbstract extends Controller implements currencyInterface
 {
-    public int $exchange=0;
-    public function __construct()
+    public Currency $currency;
+
+    /**
+     * Get current currency
+     * @param Currency $currency
+     */
+    public function __construct(Currency $currency)
     {
-
-
+        $this->currency=$currency;
     }
 
 
