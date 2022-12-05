@@ -33,8 +33,14 @@ class CurrencyController extends Controller
             ]
         ]);
         if ($validator->fails()) {
-            //Todo xml-mode : when we have tag name like 0.name or 1.name ( its false for create tag )
-            $response = $this->response($validator->errors(), false);
+            $errors = [];
+            foreach ($validator->errors()->messages() as $key => $error) {
+                $key_number = preg_match_all('/\d+/', $key);
+                $key = preg_replace('/[0-9]+./', '', $key);
+                $key .= '_' . $key_number;
+                $errors[$key] = $error;
+            }
+            $response = $this->response($errors, false);
             throw new HttpResponseException($response);
         }
         return Currency::upsert($validator->validated(), ['name', 'amount']);
