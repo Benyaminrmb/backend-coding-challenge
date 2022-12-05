@@ -6,5 +6,9 @@ use App\Models\Currency;
 
 interface currencyInterface
 {
-    public function toRial(Currency $currency):int;
+    /**
+     * force all currencies for add "to-rial" method in their controller
+     * @return int
+     */
+    public function toRial():int;
 }
