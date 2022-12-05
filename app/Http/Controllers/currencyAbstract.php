@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Currency;
 
-class currencyAbstract extends Controller implements currencyInterface
+class currencyAbstract implements currencyInterface
 {
     public Currency $currency;
 
