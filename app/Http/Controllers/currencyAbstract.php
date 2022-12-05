@@ -24,6 +24,6 @@ class currencyAbstract extends Controller implements currencyInterface
      */
     public function toRial(): int
     {
-        return $currency->amount*10;
+        return $this->currency->amount*10;
     }
 }
