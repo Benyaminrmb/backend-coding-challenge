@@ -14,7 +14,11 @@ class currencyAbstract extends Controller implements currencyInterface
     }
 
 
-    public function toRial(Currency $currency): int
+    /**
+     * Default "to-rial" method for all currencies
+     * @return int
+     */
+    public function toRial(): int
     {
         return $currency->amount*10;
     }
